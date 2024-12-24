@@ -109,12 +109,12 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative z-10 w-full h-full floating">
+            <div className="relative z-10 w-3/4 h-3/4 mx-auto my-auto floating flex items-center justify-center h-screen">
               <Image
                 src="/ccd1.png"
                 alt="Campus Connect AI Platform"
-                width={800}
-                height={800}
+                width={600}
+                height={600}
                 className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
                 priority
               />
