@@ -14,7 +14,7 @@ export function Header() {
     [0, 100],
     ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.9)']
   )
-  const backdropBlur = useTransform(scrollY, [0, 100], ['blur(0px)', 'blur(10px)'])
+  const blur = useTransform(scrollY, [0, 100], [0, 10])
 
   useEffect(() => {
     if (isOpen) {
@@ -26,7 +26,10 @@ export function Header() {
 
   return (
     <motion.header
-      style={{ backgroundColor, backdropBlur: backdropBlur as any }}
+      style={{ 
+        backgroundColor,
+        backdropFilter: blur.get() ? `blur(${blur.get()}px)` : undefined
+      }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-colors duration-300 w-full"
     >
       <nav className="w-full px-4 h-20">
