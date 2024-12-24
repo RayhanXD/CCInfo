@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Campus Connect AI',
   description: 'AI-powered platform for academic success',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -26,4 +29,3 @@ export default function RootLayout({
     </html>
   )
 }
-
