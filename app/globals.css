@@ -44,11 +44,20 @@
   to { transform: rotate(360deg); }
 }
 
+/* Add new preloader keyframes */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .text-gradient {
   background: linear-gradient(135deg, #1a237e 0%, #7c4dff 50%, #40c4ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
 }
 
 .bg-gradient {
