@@ -44,7 +44,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* Add new preloader keyframes */
 @keyframes gradient-shift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -121,7 +120,6 @@
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

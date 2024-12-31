@@ -26,7 +26,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="features" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/50 to-white" />
       
       <div className="container mx-auto px-4 relative">

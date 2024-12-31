@@ -11,8 +11,22 @@ export function Hero() {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 200])
 
+  const scrollToWaitlist = () => {
+    const element = document.getElementById('waitlist')
+    if (element) {
+      const offset = 80 // Height of the fixed header
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <section className="relative min-h-screen overflow-hidden pt-20" ref={containerRef}>
+    <section id="hero" className="relative min-h-screen overflow-hidden pt-20" ref={containerRef}>
       {/* Background grid */}
       <div className="hero-grid">
         {Array.from({ length: 32 }).map((_, i) => (
@@ -40,7 +54,7 @@ export function Hero() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-glass text-primary font-medium text-sm">
                 <Sparkles className="h-4 w-4" />
-                Version 2.0 is here
+                The power of AI, unlocked
               </span>
             </motion.div>
             <motion.h1
@@ -70,6 +84,7 @@ export function Hero() {
               <Button 
                 size="lg" 
                 className="h-14 px-8 text-lg bg-gradient hover:opacity-90 transition-all duration-300 transform hover:scale-105"
+                onClick={scrollToWaitlist}
               >
                 Get started
               </Button>
@@ -77,6 +92,10 @@ export function Hero() {
                 variant="outline" 
                 size="lg" 
                 className="h-14 px-8 text-lg bg-glass border-0 hover:bg-white/20 transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById('features')
+                  element?.scrollIntoView({ behavior: 'smooth' })
+                }}
               >
                 Learn more <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -111,7 +130,7 @@ export function Hero() {
           >
             <div className="relative z-10 w-3/4 h-3/4 mx-auto my-auto floating flex items-center justify-center h-screen">
               <Image
-                src="/ccd1.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ccd1%20(1)-min-Fwq5Hqc9Ycp9QsizGcmsbOUWEZQFEu.png"
                 alt="Campus Connect AI Platform"
                 width={600}
                 height={600}

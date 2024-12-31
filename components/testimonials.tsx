@@ -29,7 +29,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="testimonials" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5" />
       
       <div className="container mx-auto px-4 relative">
