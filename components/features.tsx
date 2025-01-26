@@ -71,6 +71,19 @@ export function Features() {
                   <Button 
                     variant="ghost" 
                     className="p-0 h-auto hover:text-secondary transition-colors"
+                    onClick={() => {
+                      const element = document.getElementById('waitlist')
+                      if (element) {
+                        const offset = 80 // Height of fixed header
+                        const elementPosition = element.getBoundingClientRect().top
+                        const offsetPosition = elementPosition + window.pageYOffset - offset
+                        
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        })
+                      }
+                    }}
                   >
                     Learn more <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
