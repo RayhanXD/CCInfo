@@ -258,7 +258,7 @@ export function Waitlist() {
             { label: 'Early Users', value: '1,000+' },
             { label: 'Universities', value: '50+' },
             { label: 'Countries', value: '25+' },
-            { label: 'Launch Date', value: 'Q1 2024' },
+            { label: 'Launch Date', value: 'Q1 2025' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl font-bold text-gradient mb-2">{stat.value}</div>
