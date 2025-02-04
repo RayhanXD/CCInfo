@@ -252,12 +252,9 @@ export function Waitlist() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          className="mt-20 flex justify-center items-center"
         >
           {[
-            { label: 'Early Users', value: '1,000+' },
-            { label: 'Universities', value: '50+' },
-            { label: 'Countries', value: '25+' },
             { label: 'Launch Date', value: 'Q1 2025' },
           ].map((stat, i) => (
             <div key={i} className="text-center">

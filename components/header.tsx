@@ -54,7 +54,7 @@ export function Header() {
     >
       <nav className="w-full px-4 md:px-0 h-20 backdrop-blur-sm bg-white/5">
         <div className="flex items-center justify-between h-full w-full px-4">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center">
             <button 
               onClick={() => scrollToSection('hero')} 
               className="flex items-center gap-2"
@@ -63,7 +63,7 @@ export function Header() {
             </button>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {menuItems.map((item) => (
               <button 
                 key={item.section}
@@ -75,9 +75,15 @@ export function Header() {
             ))}
             <Button 
               onClick={() => scrollToSection('waitlist')}
+              className="bg-black text-white hover:opacity-90"
+            >
+              Waitlist
+            </Button>
+            <Button 
+              onClick={() => scrollToSection('waitlist')}
               className="bg-gradient text-white hover:opacity-90"
             >
-              Get Started
+              Try Now
             </Button>
           </div>
 

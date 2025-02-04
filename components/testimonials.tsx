@@ -1,29 +1,25 @@
 'use client'
 
 import Image from 'next/image'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card, CardContent } from '@/components/ui/card'
 import { motion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import { Lightbulb, Target, ChartBar } from 'lucide-react'
 
-const testimonials = [
+const features = [
   {
-    name: "Alex Rivera",
-    role: "Academic Director",
-    text: "Campus Connect AI has transformed how we approach student support and academic planning. The platform's intelligent features have significantly improved student engagement and success rates.",
-    avatar: "/placeholder.svg"
+    title: "Smart Course Recommendations",
+    description: "Our smart AI can analyze your academic history and interests to provide personalized course recommendations.",
+    icon: Lightbulb
   },
   {
-    name: "Casey Jordan",
-    role: "Department Head",
-    text: "The implementation of Campus Connect AI has streamlined our administrative processes and enhanced our ability to provide personalized support to each student.",
-    avatar: "/placeholder.svg"
+    title: "Academic Planning",
+    description: "Create a plan to help you achieve your academic goals and stay on track.",
+    icon: Target
   },
   {
-    name: "Morgan Lee",
-    role: "Student Success Coordinator",
-    text: "This platform has revolutionized how we track and support student progress. The AI-driven insights have been invaluable for early intervention and student success.",
-    avatar: "/placeholder.svg"
+    title: "Performance Insights", 
+    description: "Get insights into your academic performance and recommendations for improvement.",
+    icon: ChartBar
   }
 ]
 
@@ -63,19 +59,18 @@ export function Testimonials() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gradient">
-                Trusted by Education Leaders
+                Elevate Your Academic Journey
               </h2>
               <div className="w-24 h-1 rounded-full bg-gradient mb-4" />
               <p className="text-lg text-gray-600">
-                Discover how Campus Connect AI is transforming academic institutions
-                and empowering student success.
+                Our AI-powered platform helps you optimize your academic path, track your progress, and achieve your goals through personalized recommendations.
               </p>
             </motion.div>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, i) => (
+          {features.map((feature, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -83,24 +78,21 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <Card className="h-full bg-white/50 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <Quote className="h-8 w-8 text-primary mb-4" />
-                  <p className="text-gray-600 mb-6 text-lg">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <Avatar className="h-12 w-12 ring-2 ring-primary/10">
-                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      <AvatarFallback className="bg-gradient text-white">
-                        {testimonial.name[0]}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-semibold text-gradient">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.role}</div>
+              <Card className="h-full bg-white/50 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden group">
+                <CardContent className="p-6 relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient opacity-10 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-300" />
+                  <div className="mb-4 relative">
+                    <div className="w-12 h-12 rounded-lg bg-gradient flex items-center justify-center">
+                      <feature.icon className="h-6 w-6 text-white" />
                     </div>
                   </div>
+                  <h3 className="text-xl font-semibold mb-3 text-gradient relative">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-lg relative">
+                    {feature.description}
+                  </p>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </CardContent>
               </Card>
             </motion.div>
@@ -110,4 +102,3 @@ export function Testimonials() {
     </section>
   )
 }
-

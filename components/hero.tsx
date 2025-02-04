@@ -100,7 +100,7 @@ export function Hero() {
                 Learn more <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
-            <motion.div
+            {/* <motion.div
               className="mt-12 flex items-center gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -119,7 +119,7 @@ export function Hero() {
               <div className="text-lg text-gray-600">
                 <span className="font-semibold">1000+</span> students already enrolled
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
           <motion.div
             className="relative w-full h-full min-h-[500px] lg:min-h-[800px]"
