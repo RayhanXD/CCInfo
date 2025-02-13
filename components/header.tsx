@@ -80,7 +80,7 @@ export function Header() {
               Waitlist
             </Button>
             <Button 
-              onClick={() => scrollToSection('waitlist')}
+              onClick={() => window.location.href = 'https://platform.campusconnectai.org/'}
               className="bg-gradient text-white hover:opacity-90"
             >
               Try Now
