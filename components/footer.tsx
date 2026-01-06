@@ -15,7 +15,7 @@ export function Footer() {
             </p>
           </div>
           <div className="flex justify-end space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>

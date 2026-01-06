@@ -141,7 +141,7 @@ const DeleteAccount = () => {
                     If you have questions about data deletion or privacy,
                     please review our{" "}
                     <Link
-                      href="/privacy"
+                      href="/privacy-policy"
                       className="text-primary hover:text-accent transition-colors underline"
                     >
                       Privacy Policy
